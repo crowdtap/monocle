@@ -13,10 +13,10 @@ The _classic_ way to deal with large images is to create series of resized
 images, and use the closest image in size on the frontend.
 
 ```html
- <img src='/images/monocle-original.png/>
- <img src='/images/monocle-large.png/>
- <img src='/images/monocle-medium.png/>
- <img src='/images/monocle-small.png/>
+ <img src='/images/monocle-original.png'/>
+ <img src='/images/monocle-large.png'/>
+ <img src='/images/monocle-medium.png'/>
+ <img src='/images/monocle-small.png'/>
 ```
 
 results in this:
