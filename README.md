@@ -36,10 +36,12 @@ is sub-optimal.
 We think we have a better way to deal with images using _**live transformation and caching**_.
 
 Instead of using the resized images as a source for the images, we point to the
-monocle service and pass parameters to it, the URL of the image being one of
+monocle service and pass parameters to it, the source of the image (src parameter) being one of
 them.
 
-Assuming the Monocle service is running on `http://monocle.crowdtap.com/transform_image`
+Assuming the Monocle service is running on `http://monocle.crowdtap.com/transform_image` we can...
+
+### Resize to 300px size...
 
 ```html
  <img src='http://monocle.crowdtap.com/transform_image?src=http://images.crowdtap.com/images/monocle-original.png&resize=300'/>
@@ -47,13 +49,23 @@ Assuming the Monocle service is running on `http://monocle.crowdtap.com/transfor
 
 ![Monocle Small](http://magickly.jux.com/?src=https://github.com/crowdtap/monocle/raw/master/doc/images/monocle-man.jpg&resize=300)
 
+### Add a black and white filter and mirror...
+
 ```html
- <img src='http://monocle.crowdtap.com/transform_image?src=http://images.crowdtap.com/images/monocle-original.png&resize=300&greyscale=true'/>
+ <img src='http://monocle.crowdtap.com/transform_image?src=http://images.crowdtap.com/images/monocle-original.png&resize=300&greyscale=true&flop=true'/>
 ```
 
-![Monocle Small](http://magickly.jux.com/?src=https://github.com/crowdtap/monocle/raw/master/doc/images/monocle-man.jpg&resize=300&greyscale=true)
+![Monocle Small](http://magickly.jux.com/?src=https://github.com/crowdtap/monocle/raw/master/doc/images/monocle-man.jpg&resize=300&greyscale=true&flop=true)
 
-# Try it!
+### Add a black and white filter...
+
+```html
+ <img src='http://monocle.crowdtap.com/transform_image?src=http://images.crowdtap.com/images/monocle-original.png&resize=300&greyscale=true&flop=true&rotate=135'/>
+```
+
+![Monocle Small](http://magickly.jux.com/?src=https://github.com/crowdtap/monocle/raw/master/doc/images/monocle-man.jpg&resize=300&greyscale=true&flop=true&rotate=135)
+
+## Try it!
 
 ```
 http://magickly.jux.com/?src=https://github.com/crowdtap/monocle/raw/master/doc/images/monocle-man.jpg&resize=250&flop=true
