@@ -57,13 +57,13 @@ Assuming the Monocle service is running on `http://monocle.crowdtap.com/transfor
 
 ![Monocle Small](http://magickly.jux.com/?src=https://github.com/crowdtap/monocle/raw/master/doc/images/monocle-man.jpg&resize=300&greyscale=true&flop=true)
 
-### Add a black and white filter...
+### Rotate by 45 degrees...
 
 ```html
- <img src='http://monocle.crowdtap.com/transform_image?src=http://images.crowdtap.com/images/monocle-original.png&resize=300&greyscale=true&flop=true&rotate=135'/>
+ <img src='http://monocle.crowdtap.com/transform_image?src=http://images.crowdtap.com/images/monocle-original.png&resize=300&greyscale=true&flop=true&rotate=45'/>
 ```
 
-![Monocle Small](http://magickly.jux.com/?src=https://github.com/crowdtap/monocle/raw/master/doc/images/monocle-man.jpg&resize=300&greyscale=true&flop=true&rotate=135)
+![Monocle Small](http://magickly.jux.com/?src=https://github.com/crowdtap/monocle/raw/master/doc/images/monocle-man.jpg&resize=300&greyscale=true&flop=true&rotate=45)
 
 ## Try it!
 
