@@ -21,10 +21,12 @@ images, and use the closest image in size on the frontend.
 
 results in this:
 
+->
 ![Monocle Original](doc/images/monocle-original.png)
 ![Monocle Big](doc/images/monocle-large.png)
 ![Monocle Medium](doc/images/monocle-medium.png)
 ![Monocle Small](doc/images/monocle-small.png)
+->
 
 If the image place holder is too big for your resized image, you will end up with a **pixelated** image, on the other end if it is too small, you will **loose bandwidth**, and your loadtime will be impacted. This classic approach is sub-optimal.
 
