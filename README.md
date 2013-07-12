@@ -1,5 +1,5 @@
-Monocle
-=======
+Monocle - An elegant solution to manage images
+==============================================
 
 ![Monocle](doc/images/monocle-mustache.gif)
 
