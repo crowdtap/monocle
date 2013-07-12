@@ -1,11 +1,11 @@
 Monocle
 =======
 
-Many images, one lens
-
 ![Monocle](doc/images/monocle-mustache.gif)
 
-### The problem
+Many images, one lens
+
+## The problem
 
 Dealing with images is a common requirement when putting a website together.
 
@@ -28,6 +28,6 @@ results in this:
 
 If the image place holder is too big for your resized image, you will end up with a **pixelated** image, on the other end if it is too small, you will **loose bandwidth**, and your loadtime will be impacted. This classic approach is sub-optimal.
 
-### Our solution
+## Our solution
 
 We think we have a better way to deal with images using _**live transformation and caching**_.
