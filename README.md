@@ -1,9 +1,9 @@
-Monocle - An elegant solution to manage images
-==============================================
-
-![Monocle](doc/images/monocle-mustache.gif)
+Monocle
+=======
 
 _An elegant solution to manage images_
+
+![Monocle](doc/images/monocle-mustache.gif)
 
 ## The problem
 
