@@ -39,10 +39,19 @@ Instead of using the resized images as a source for the images, we point to the
 monocle service and pass parameters to it, the URL of the image being one of
 them.
 
+Assuming the Monocle service is running on `http://monocle.crowdtap.com/transform_image`
+
 ```html
- <img src='http://monocle.crowdtap.com/transform_image?src=http://images.crowdtap.com/images/monocle-original.png'/>
- <img src='http://monocle.crowdtap.com/transform_image?src=http://images.crowdtap.com/images/monocle-original.png&resize=100x100&greyscale=true'/>
+ <img src='http://monocle.crowdtap.com/transform_image?src=http://images.crowdtap.com/images/monocle-original.png&resize=300'/>
 ```
+
+![Monocle Small](http://magickly.jux.com/?src=https://github.com/crowdtap/monocle/raw/master/doc/images/monocle-man.jpg&resize=300)
+
+```html
+ <img src='http://monocle.crowdtap.com/transform_image?src=http://images.crowdtap.com/images/monocle-original.png&resize=300&greyscale=true'/>
+```
+
+![Monocle Small](http://magickly.jux.com/?src=https://github.com/crowdtap/monocle/raw/master/doc/images/monocle-man.jpg&resize=300&greyscale=true)
 
 # Try it!
 
