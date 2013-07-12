@@ -14,7 +14,7 @@ images, and use the closest image in size on the frontend.
 
 ```
    <img src='/images/monocle-original.png/>
-   <img src='/images/monocle-big.png/>
+   <img src='/images/monocle-large.png/>
    <img src='/images/monocle-medium.png/>
    <img src='/images/monocle-small.png/>
 ```
@@ -22,7 +22,7 @@ images, and use the closest image in size on the frontend.
 results in this:
 
 ![Monocle Original](doc/images/monocle-original.png)
-![Monocle Big](doc/images/monocle-big.png)
+![Monocle Big](doc/images/monocle-large.png)
 ![Monocle Medium](doc/images/monocle-medium.png)
 ![Monocle Small](doc/images/monocle-small.png)
 
