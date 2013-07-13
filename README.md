@@ -35,9 +35,14 @@ is sub-optimal.
 
 We think we have a better way to deal with images using _**live transformation and caching**_.
 
-Instead of using the resized images as a source for the images, we point to the
-monocle service and pass parameters to it, the source of the image (src parameter) being one of
-them.
+Instead of transforming images in advanced, and loading them using their hard coded name,
+we ask monocle to load the original image from the source, and append
+transformation parameters to the URL. This way you only need one reference to
+the original image in your model and database, the transformation parameters
+are choosen when implementing the frontend part of your website, there is no
+need to guess in advanced. The monocle approach is very agile in that sense.
+
+## Live examples
 
 Assuming the Monocle service is running on `http://monocle.crowdtap.com/transform_image` we can...
 
@@ -72,6 +77,10 @@ Assuming the Monocle service is running on `http://monocle.crowdtap.com/transfor
 ```
 
 ![Monocle Small](http://magickly.jux.com/?src=https://github.com/crowdtap/monocle/raw/master/doc/images/monocle-man.jpg&resize=300&greyscale=true&flop=true&jcn=true)
+
+### And more...
+
+The list of transformation is here:
 
 ## Try it!
 
