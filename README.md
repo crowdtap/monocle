@@ -35,16 +35,16 @@ is sub-optimal.
 
 We think we have a better way to deal with images using _**live transformation and caching**_.
 
-Instead of transforming images in advanced, and loading them using their hard coded name,
+Instead of transforming images in advanced, and loading them using their hard coded names,
 we ask monocle to load the original image from the source, and append
-transformation parameters to the URL. This way you only need one reference to
+transformation parameters to the URL. This way you only need *one reference* to
 the original image in your model and database, the transformation parameters
 are choosen when implementing the frontend part of your website, there is no
-need to guess in advanced. The monocle approach is very agile in that sense.
+need to guess in advance. The monocle approach is very agile in that sense.
 
 ## Live examples
 
-Assuming the Monocle service is running on `http://monocle.crowdtap.com/transform_image` we can...
+Assuming the Monocle service is running on `http://monocle.crowdtap.com/transform_image` we can do the following...
 
 ### Resize to 300px size...
 
@@ -81,6 +81,33 @@ Assuming the Monocle service is running on `http://monocle.crowdtap.com/transfor
 ### And more...
 
 The list of transformation is here:
+
+## Caching considerations
+
+Resizing a given image over an over is very inefficient, hence the need for a
+caching mechanism. But bear with me it is very simple to put a cache in place.
+
+At Crowdtap we are using Cloudfront, the caching service from Amazon.
+
+There is a small problem though, the query parameters are not taken into
+consideration by most caching services, therefore we use an alternative URL
+syntax to load the images from Monocle.
+
+Instead of using query parameters:
+
+```html
+ <img src='http://monocle.crowdtap.com/transform_image?src=http://images.crowdtap.com/images/monocle-original.png&resize=300'/>
+```
+
+Hence the route is reorganized using a series of `param/value` where values are URL encoded:
+
+```html
+ <img src='http://monocle.crowdtap.com/transform_image/q/src/http%3A%2F%2Fimages.crowdtap.com%2Fimages%2Fmonocle-original.png/resize/300'/>
+```
+
+Now the route will be recorded by the cache. The next time a visitor hits that
+route it will be served by the cache directly, and the Monocle backend service
+will not be called.
 
 ## Try it!
 
