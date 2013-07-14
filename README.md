@@ -90,7 +90,7 @@ Assuming the Monocle service is running on `http://monocle.crowdtap.com/transfor
 
 ### And more...
 
-An extensive list of parameters you can use are available in the ![Dragonfly documentation](http://markevans.github.io/dragonfly/file.ImageMagick.html)
+An extensive list of parameters you can use are available in the [Dragonfly documentation](http://markevans.github.io/dragonfly/file.ImageMagick.html)
 
 ## Caching considerations
 
@@ -131,9 +131,9 @@ http://magickly.jux.com/?src=https://github.com/crowdtap/monocle/raw/master/doc/
 
 Monocle is relying on a series of softwares to work.
 
-- ![ImageMagick](http://www.imagemagick.org/script/index.php), an excellent command line image processing tool.
-- ![Dragonfly](https://github.com/markevans/dragonfly) "A Ruby Rack-based gem for on-the-fly processing" (This is based on ImageMagick)
-- ![Magickly](http://magickly.jux.com/) Image manipulation as a (plugin-able) service (This is base on Dragonfly)
+- [ImageMagick](http://www.imagemagick.org/script/index.php), an excellent command line image processing tool.
+- [Dragonfly](https://github.com/markevans/dragonfly) "A Ruby Rack-based gem for on-the-fly processing" (This is based on ImageMagick)
+- [Magickly](http://magickly.jux.com/) Image manipulation as a (plugin-able) service (This is base on Dragonfly)
 
 Thanks and :+1: & Kudos to the people behind these projects.
 
