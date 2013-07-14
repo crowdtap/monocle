@@ -5,6 +5,10 @@ _An elegant solution to manage images_
 
 ![Monocle](doc/images/monocle-mustache.gif)
 
+## Table of content
+
+[The problem](#the-problem)
+
 ## The problem
 
 Dealing with images is a common requirement when putting a website together.
@@ -85,9 +89,9 @@ The list of transformation is here:
 ## Caching considerations
 
 Resizing a given image over an over is very inefficient, hence the need for a
-caching mechanism. But bear with me it is very simple to put a cache in place.
+caching mechanism. Bear with me it is very simple to put a cache in place.
 
-At Crowdtap we are using Cloudfront, the caching service from Amazon.
+At Crowdtap we are using Cloudfront, the caching and CDN service from Amazon.
 
 There is a small problem though, the query parameters are not taken into
 consideration by most caching services, therefore we use an alternative URL
