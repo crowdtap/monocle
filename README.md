@@ -11,7 +11,7 @@ _An elegant solution to manage images_
 - [Our solution](#our-solution)
 - [Examples](#examples)
 - [Caching considerations](#caching-considerations)
-- [Try it](#try-it-live)
+- [Try it](#try-it)
 
 ## The problem
 
