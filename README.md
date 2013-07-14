@@ -10,8 +10,9 @@ _An elegant solution to manage images_
 - [The problem](#the-problem)
 - [Our solution](#our-solution)
 - [Examples](#examples)
-- [Caching considerations](#caching-considerations)
 - [Try it](#try-it)
+- [Caching considerations](#caching-considerations)
+- [Image helpers - TBD](#image-helpers)
 - [Credits](#credits)
 - [License - TBD](#license)
 
@@ -95,13 +96,14 @@ An extensive list of parameters you can use are available in the [Dragonfly docu
 ## Caching considerations
 
 Resizing a given image over an over is very inefficient, hence the need for a
-caching mechanism. Bear with me it is very simple to put a cache in place.
+caching mechanism. Bear with me we have a simple solution for you to add a
+caching layer on top of your service.
 
 At Crowdtap we are using Cloudfront, the caching and CDN service from Amazon.
 
 There is a small problem though, the query parameters are not taken into
-consideration by most caching services, therefore we use an alternative URL
-syntax to load the images from Monocle.
+consideration by most caching services, therefore we use an _alternate URL
+syntax_ to load the images from Monocle.
 
 Instead of using query parameters:
 
@@ -119,6 +121,8 @@ Now the route will be recorded by the cache. The next time a visitor hits that
 route it will be served by the cache directly, and the Monocle backend service
 will not be called.
 
+## Image helpers - TBD
+
 ## Try it!
 
 ```
@@ -135,6 +139,6 @@ Monocle is relying on a series of softwares to work.
 - [Dragonfly](https://github.com/markevans/dragonfly) "A Ruby Rack-based gem for on-the-fly processing" (This is based on ImageMagick)
 - [Magickly](http://magickly.jux.com/) Image manipulation as a (plugin-able) service (This is base on Dragonfly)
 
-Thanks and :+1: & Kudos to the people behind these projects.
+:+1: & Kudos to the people behind these projects.
 
 ## License - TBD
