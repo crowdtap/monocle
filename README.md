@@ -1,7 +1,7 @@
 Monocle
 =======
 
-_An elegant solution to manage images_
+_Live transform and cache your images at load time_
 
 ![Monocle](doc/images/monocle-mustache.gif)
 
