@@ -7,7 +7,11 @@ _An elegant solution to manage images_
 
 ## Table of content
 
-[The problem](#the-problem)
+- [The problem](#the-problem)
+- [Our solution](#our-solution)
+- [Examples](#examples)
+- [Caching considerations](#caching-considerations)
+- [Try it](#try-it-live)
 
 ## The problem
 
@@ -46,7 +50,7 @@ the original image in your model and database, the transformation parameters
 are choosen when implementing the frontend part of your website, there is no
 need to guess in advance. The monocle approach is very agile in that sense.
 
-## Live examples
+## Examples
 
 Assuming the Monocle service is running on `http://monocle.crowdtap.com/transform_image` we can do the following...
 
