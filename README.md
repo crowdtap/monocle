@@ -12,6 +12,8 @@ _An elegant solution to manage images_
 - [Examples](#examples)
 - [Caching considerations](#caching-considerations)
 - [Try it](#try-it)
+- [Credits](#credits)
+- [License - TBD](#license)
 
 ## The problem
 
@@ -88,7 +90,7 @@ Assuming the Monocle service is running on `http://monocle.crowdtap.com/transfor
 
 ### And more...
 
-The list of transformation is here:
+An extensive list of parameters you can use are available in the ![Dragonfly documentation](http://markevans.github.io/dragonfly/file.ImageMagick.html)
 
 ## Caching considerations
 
@@ -124,3 +126,15 @@ http://magickly.jux.com/?src=https://github.com/crowdtap/monocle/raw/master/doc/
 ```
 
 ![Monocle Small](http://magickly.jux.com/?src=https://github.com/crowdtap/monocle/raw/master/doc/images/monocle-man.jpg&resize=600&flop=true)
+
+## Credits
+
+Monocle is relying on a series of softwares to work.
+
+- ![ImageMagick](http://www.imagemagick.org/script/index.php), an excellent command line image processing tool.
+- ![Dragonfly](https://github.com/markevans/dragonfly) "A Ruby Rack-based gem for on-the-fly processing" (This is based on ImageMagick)
+- ![Magickly](http://magickly.jux.com/) Image manipulation as a (plugin-able) service (This is base on Dragonfly)
+
+Thanks and :+1: & Kudos to the people behind these projects.
+
+## License - TBD
