@@ -96,10 +96,9 @@ An extensive list of parameters you can use are available in the [Dragonfly docu
 ## Caching considerations
 
 Resizing a given image over an over is very inefficient, hence the need for a
-caching mechanism. Bear with me we have a simple solution for you to add a
-caching layer on top of your service.
-
-At Crowdtap we are using Cloudfront, the caching and CDN service from Amazon.
+caching mechanism. Caches are beyond the scope of this documentation, though
+adding a caching layer on top of your service is easy. At Crowdtap we are using
+Cloudfront, the caching and CDN service from Amazon.
 
 There is a small problem though, the query parameters are not taken into
 consideration by most caching services, therefore we use an _alternate URL
