@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
 gem 'magickly', '~> 1.1'
+gem "airbrake", "~> 3.1"
 gem 'newrelic_rpm'
 gem 'unicorn'
 
