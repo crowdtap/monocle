@@ -4,6 +4,7 @@ gem 'rails', '3.2.13'
 gem 'magickly', '~> 1.1'
 gem 'newrelic_rpm'
 gem 'unicorn'
+gem 'airbrake'
 
 group :development do
   gem 'foreman'
