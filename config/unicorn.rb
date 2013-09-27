@@ -11,8 +11,6 @@ if ENV['RACK_ENV'] == 'development'
 
   if ENV['BOXEN_SOCKET_DIR']
     listen "#{ENV['BOXEN_SOCKET_DIR']}/monocle", :backlog => 64
-  else
-    listen 3003
   end
 else
   user 'www-data', 'www-data'
