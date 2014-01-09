@@ -1,6 +1,6 @@
-<<<<<<< HEAD
 *.rbc
 *.sassc
+*.swp
 .sass-cache
 capybara-*.html
 .rspec

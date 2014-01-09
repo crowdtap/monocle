@@ -1,4 +1,15 @@
 GIT
+  remote: git://github.com/afeld/magickly.git
+  revision: 060b1ffba9f45ac1423c3f78f3135e9a844aaece
+  specs:
+    magickly (1.4.0)
+      activesupport (>= 2.0.0)
+      addressable (~> 2.2)
+      dragonfly (~> 0.9.14)
+      httparty (~> 0.8)
+      sinatra (~> 1.2)
+
+GIT
   remote: git@github.com:crowdtap/health_check.git
   revision: 91a045d44f44c96d93a296dbcb6d62b99598ac23
   specs:
@@ -56,12 +67,6 @@ GEM
     journey (1.0.4)
     json (1.8.0)
     kgio (2.8.0)
-    magickly (1.4.0)
-      activesupport (>= 2.0.0)
-      addressable (~> 2.2)
-      dragonfly (~> 0.9.5)
-      httparty (~> 0.8.1)
-      sinatra (~> 1.2)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -125,7 +130,7 @@ DEPENDENCIES
   foreman
   health_check!
   honeybadger
-  magickly (~> 1.1)
+  magickly!
   newrelic_rpm
   rails (= 3.2.13)
   unicorn
