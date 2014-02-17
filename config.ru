@@ -1,4 +1,14 @@
-# This file is used by Rack-based servers to start the application.
+require 'honeybadger'
 
-require ::File.expand_path('../config/environment',  __FILE__)
-run Monocle::Application
+Honeybadger.configure do |config|
+  config.api_key = 'c6971908'
+end
+use Honeybadger::Rack
+
+map "/transform_image" do
+  run Monocle::Application
+end
+
+map "/health" do
+  run HealthCheck::Engine
+end

@@ -133,5 +133,4 @@ DEPENDENCIES
   magickly!
   newrelic_rpm
   rack-protection (= 1.5.0)
-  rails (= 3.2.13)
   unicorn
