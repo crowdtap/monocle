@@ -2,7 +2,6 @@ require 'bundler'
 Bundler.require
 
 require 'new_relic/rack/agent_hooks'
-require 'new_relic/rack/agent_hooks'
 require 'new_relic/rack/error_collector'
 
 use NewRelic::Rack::AgentHooks
