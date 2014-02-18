@@ -1,6 +1,9 @@
 require 'bundler'
 Bundler.require
 
+ENV['BUNDLE_GEMFILE'] ||= File.expand_path('Gemfile', __FILE__)
+require 'bundler/setup' if File.exists?(ENV['BUNDLE_GEMFILE'])
+
 require 'new_relic/rack/agent_hooks'
 require 'new_relic/rack/error_collector'
 
