@@ -1,6 +1,5 @@
 require 'honeybadger'
 require 'magickly'
-require 'health_check'
 
 Honeybadger.configure do |config|
   config.api_key = 'c6971908'
@@ -12,5 +11,5 @@ map "/transform_image" do
 end
 
 map "/health" do
-  run HealthCheck::Engine
+
 end
