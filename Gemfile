@@ -10,4 +10,4 @@ group :development do
   gem 'foreman'
 end
 
-gem 'health_check', :git => 'git@github.com:crowdtap/health_check.git'
+gem 'rack-health'
