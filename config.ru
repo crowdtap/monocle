@@ -1,6 +1,12 @@
-require 'honeybadger'
-require 'magickly'
-require 'rack-health'
+require 'bundler'
+Bundler.require
+
+require 'new_relic/rack/agent_hooks'
+require 'new_relic/rack/agent_hooks'
+require 'new_relic/rack/error_collector'
+
+use NewRelic::Rack::AgentHooks
+use NewRelic::Rack::ErrorCollector
 
 Honeybadger.configure do |config|
   config.api_key = 'c6971908'
