@@ -13,7 +13,13 @@ end
 use Honeybadger::Rack
 use NewRelic::Rack::AgentHooks
 use NewRelic::Rack::ErrorCollector
-use Rack::Health, :path => "/health", :body => lambda {|healthy| %Q({ "in_rotation": #{healthy}, "revision": "#{::File.exists?('REVISION')? ::File.read('REVISION').chomp : 'n/a'}" }) }
+use Rack::Health, :path => "/health",
+                  :body => lambda { |healthy|
+                    {
+                      :in_rotation => healthy,
+                      :revision    => ::File.exists?('REVISION')? ::File.read('REVISION').chomp : 'n/a'
+                    }.to_json
+                  }
 
 map "/transform_image" do
   run Magickly::App
