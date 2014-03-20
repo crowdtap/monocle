@@ -21,6 +21,13 @@ use Rack::Health, :path => "/health",
                     }.to_json
                   }
 
+Magickly.dragonfly.configure do |config|
+  config.job :optim do |content|
+    image_optim = ImageOptim.new(:pngout => false)
+    image_optim.optimize_image!(@job.path)
+  end
+end
+
 map "/transform_image" do
   run Magickly::App
 end
