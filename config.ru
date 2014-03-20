@@ -23,7 +23,7 @@ use Rack::Health, :path => "/health",
 
 Magickly.dragonfly.configure do |config|
   config.job :optim do |content|
-    image_optim = ImageOptim.new(:verbose => true, :pngout => false)
+    image_optim = ImageOptim.new(:pngout => false)
     image_optim.optimize_image!(@job.path)
   end
 end
