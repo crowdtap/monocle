@@ -8,7 +8,7 @@ require 'new_relic/rack/agent_hooks'
 require 'new_relic/rack/error_collector'
 
 Honeybadger.configure do |config|
-  config.api_key = 'c6971908'
+  #config.api_key = 'c6971908'
 end
 use Honeybadger::Rack
 use NewRelic::Rack::AgentHooks
@@ -22,7 +22,9 @@ use Rack::Health, :path => "/health",
                   }
 
 Magickly.dragonfly.configure do |config|
-  config.job :optim do |content|
+  config.job :optimized_thumb do |geometry, format|
+    process :thumb, geometry
+    encode format if format
     image_optim = ImageOptim.new(:pngout => false)
     image_optim.optimize_image!(@job.path)
   end
