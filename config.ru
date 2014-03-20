@@ -8,7 +8,7 @@ require 'new_relic/rack/agent_hooks'
 require 'new_relic/rack/error_collector'
 
 Honeybadger.configure do |config|
-  #config.api_key = 'c6971908'
+  config.api_key = 'c6971908'
 end
 use Honeybadger::Rack
 use NewRelic::Rack::AgentHooks
