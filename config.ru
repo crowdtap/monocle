@@ -22,7 +22,9 @@ use Rack::Health, :path => "/health",
                   }
 
 Magickly.dragonfly.configure do |config|
-  config.job :optim do |content|
+  config.job :optimized_thumb do |geometry, format|
+    process :thumb, geometry
+    encode format if format
     image_optim = ImageOptim.new(:pngout => false)
     image_optim.optimize_image!(@job.path)
   end
