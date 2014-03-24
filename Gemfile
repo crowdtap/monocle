@@ -11,4 +11,8 @@ group :development do
   gem 'foreman'
 end
 
+group :test do
+  gem 'rspec'
+end
+
 gem 'rack-health'

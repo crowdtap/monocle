@@ -5,12 +5,15 @@ Bundler.require
 
 ENV['BUNDLE_GEMFILE'] ||= File.expand_path('Gemfile', __FILE__)
 require 'bundler/setup' if File.exists?(ENV['BUNDLE_GEMFILE'])
+require './app/monocle.rb'
 
 require 'new_relic/rack/agent_hooks'
 require 'new_relic/rack/error_collector'
 
-Honeybadger.configure do |config|
-  config.api_key = 'c6971908'
+if ENV['RACK_ENV'] == 'production'
+  Honeybadger.configure do |config|
+    config.api_key = 'c6971908'
+  end
 end
 use Honeybadger::Rack
 use NewRelic::Rack::AgentHooks
@@ -23,15 +26,6 @@ use Rack::Health, :path => "/health",
                     }.to_json
                   }
 
-Magickly.dragonfly.configure do |config|
-  config.job :optimized_thumb do |geometry, format|
-    process :thumb, geometry
-    encode format if format
-    image_optim = ImageOptim.new(:pngout => false, :svgo => false)
-    image_optim.optimize_image!(@job.path)
-  end
-end
-
 map "/transform_image" do
-  run Magickly::App
+  run Monocle.new
 end

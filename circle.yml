@@ -1,0 +1,12 @@
+general:
+  branches:
+    ignore:
+      - production
+machine:
+  timezone:
+    America/New_York
+deployment:
+  production:
+    branch: master
+    commands:
+      - curl -H 'x-api-key:20dca2067c57c415fd797184715b1b' -XPOST http://deployer.crowdtap.com/deploys/$CIRCLE_PROJECT_REPONAME/production/$CIRCLE_SHA1
