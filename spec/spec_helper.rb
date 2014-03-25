@@ -7,9 +7,10 @@ require 'bundler/setup' if File.exists?(ENV['BUNDLE_GEMFILE'])
 
 require 'rspec'
 require 'rack/test'
+require 'webmock/rspec'
 
-Dir[File.expand_path('../../app/*.rb', __FILE__)].each do |f|
-  require f
+Dir[File.expand_path('../../app/*.rb', __FILE__)].each do |file|
+  require file
 end
 
 RSpec.configure do |config|
