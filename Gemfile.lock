@@ -51,6 +51,8 @@ GEM
       rack (>= 1.2.0)
     rack-protection (1.5.0)
       rack
+    rack-test (0.6.2)
+      rack (>= 1.0)
     raindrops (0.12.0)
     rspec (2.14.1)
       rspec-core (~> 2.14.0)
@@ -82,5 +84,6 @@ DEPENDENCIES
   newrelic_rpm
   rack-health
   rack-protection (= 1.5.0)
+  rack-test
   rspec
   unicorn

@@ -26,6 +26,4 @@ use Rack::Health, :path => "/health",
                     }.to_json
                   }
 
-map "/transform_image" do
-  run Monocle.new
-end
+run Monocle.new
