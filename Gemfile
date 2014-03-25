@@ -11,4 +11,10 @@ group :development do
   gem 'foreman'
 end
 
+group :test do
+  gem 'rspec'
+  gem 'rack-test'
+  gem 'webmock'
+end
+
 gem 'rack-health'
