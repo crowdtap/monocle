@@ -5,6 +5,11 @@ general:
 machine:
   timezone:
     America/New_York
+dependencies:
+  pre:
+    - wget http://www.kokkonen.net/tjko/src/jpegoptim-1.3.0.tar.gz
+    - zcat jpegoptim-1.3.0.tar.gz | tar xf -
+    - cd jpegoptim-1.3.0 && ./configure && make
 deployment:
   production:
     branch: master
