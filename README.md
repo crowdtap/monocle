@@ -63,7 +63,7 @@ Assuming the Monocle service is running on `http://monocle.crowdtap.com/transfor
  <img src='http://monocle.crowdtap.com/transform_image?src=http://images.crowdtap.com/images/monocle-original.png&resize=300'/>
 ```
 
-![Monocle Small](http://magickly.jux.com/?src=https://github.com/crowdtap/monocle/raw/master/doc/images/monocle-man.jpg&resize=300)
+![Monocle Small](http://monocle.crowdtap.com/transform_image?src=http://images.crowdtap.com/images/monocle-original.png&resize=300)
 
 ### Add a black and white filter and mirror...
 
@@ -71,7 +71,7 @@ Assuming the Monocle service is running on `http://monocle.crowdtap.com/transfor
  <img src='http://monocle.crowdtap.com/transform_image?src=http://images.crowdtap.com/images/monocle-original.png&resize=300&greyscale=true&flop=true'/>
 ```
 
-![Monocle Small](http://magickly.jux.com/?src=https://github.com/crowdtap/monocle/raw/master/doc/images/monocle-man.jpg&resize=300&greyscale=true&flop=true)
+![Monocle Small](http://monocle.crowdtap.com/transform_image?src=http://images.crowdtap.com/images/monocle-original.png&resize=300&greyscale=true&flop=true)
 
 ### Rotate by 45 degrees...
 
@@ -79,7 +79,7 @@ Assuming the Monocle service is running on `http://monocle.crowdtap.com/transfor
  <img src='http://monocle.crowdtap.com/transform_image?src=http://images.crowdtap.com/images/monocle-original.png&resize=300&greyscale=true&flop=true&rotate=45'/>
 ```
 
-![Monocle Small](http://magickly.jux.com/?src=https://github.com/crowdtap/monocle/raw/master/doc/images/monocle-man.jpg&resize=300&greyscale=true&flop=true&rotate=45)
+![Monocle Small](http://monocle.crowdtap.com/transform_image?src=http://images.crowdtap.com/images/monocle-original.png&resize=300&greyscale=true&flop=true&rotate=45)
 
 ### And more...
 
@@ -87,7 +87,7 @@ Assuming the Monocle service is running on `http://monocle.crowdtap.com/transfor
  <img src='http://monocle.crowdtap.com/transform_image?src=http://images.crowdtap.com/images/monocle-original.png&resize=300&greyscale=true&flop=true&jcn=true'/>
 ```
 
-![Monocle Small](http://magickly.jux.com/?src=https://github.com/crowdtap/monocle/raw/master/doc/images/monocle-man.jpg&resize=300&greyscale=true&flop=true&jcn=true)
+![Monocle Small](http://monocle.crowdtap.com/transform_image?src=http://images.crowdtap.com/images/monocle-original.png&resize=300&greyscale=true&flop=true&jcn=true)
 
 ### And more...
 
