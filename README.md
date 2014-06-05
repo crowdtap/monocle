@@ -179,6 +179,12 @@ Now the route will be recorded by the cache. The next time a visitor hits that
 route it will be served by the cache directly, and the Monocle backend service
 will not be called.
 
+## Frontend Helper
+
+For JS applications, we recommend using
+[Enhance](https://github.com/crowdtap/enhance) to resize images on the fly using
+Monocle and display high density pictures for Hi DPI screens when needed.
+
 ## Credits
 
 Monocle is relying on a series of softwares to work.
