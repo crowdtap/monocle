@@ -55,39 +55,39 @@ need to guess in advance. The monocle approach is very agile in that sense.
 
 Assuming the Monocle service is running on `http://monocle.ec2.crowdtap.com/transform_image`, and the source of the image we are resizing is `https://raw.githubusercontent.com/crowdtap/monocle/master/doc/images/monocle-original.png`, we can do the following...
 
-### Resize to 300px size...
+### Resize to 150px size...
 
 ```html
- <img src='http://monocle.ec2.crowdtap.com/transform_image?src=https://raw.githubusercontent.com/crowdtap/monocle/master/doc/images/monocle-original.png&resize=300'/>
+ <img src='http://monocle.ec2.crowdtap.com/transform_image?src=https://raw.githubusercontent.com/crowdtap/monocle/master/doc/images/monocle-original.png&resize=150'/>
 ```
 
-![Monocle Small](http://dgj5ep7xp9u24.cloudfront.net/transform_image?src=https://raw.githubusercontent.com/crowdtap/monocle/master/doc/images/monocle-original.png&resize=300)
+![Monocle Small](http://dgj5ep7xp9u24.cloudfront.net/transform_image?src=https://raw.githubusercontent.com/crowdtap/monocle/master/doc/images/monocle-original.png&resize=150)
 
 Notice how the `src` for the image is url encoded.
 
 ### Add a black and white filter and mirror...
 
 ```html
- <img src='http://monocle.ec2.crowdtap.com/transform_image?src=https://raw.githubusercontent.com/crowdtap/monocle/master/doc/images/monocle-original.png&resize=300&greyscale=true&flop=true'/>
+ <img src='http://monocle.ec2.crowdtap.com/transform_image?src=https://raw.githubusercontent.com/crowdtap/monocle/master/doc/images/monocle-original.png&resize=150&greyscale=true&flop=true'/>
 ```
 
-![Monocle Small](http://dgj5ep7xp9u24.cloudfront.net/transform_image?src=https://raw.githubusercontent.com/crowdtap/monocle/master/doc/images/monocle-original.png&resize=300&greyscale=true&flop=true)
+![Monocle Small](http://dgj5ep7xp9u24.cloudfront.net/transform_image?src=https://raw.githubusercontent.com/crowdtap/monocle/master/doc/images/monocle-original.png&resize=150&greyscale=true&flop=true)
 
 ### Rotate by 45 degrees...
 
 ```html
- <img src='http://monocle.crowdtap.com/transform_image?src=https://raw.githubusercontent.com/crowdtap/monocle/master/doc/images/monocle-original.png&resize=300&greyscale=true&flop=true&rotate=45'/>
+ <img src='http://monocle.crowdtap.com/transform_image?src=https://raw.githubusercontent.com/crowdtap/monocle/master/doc/images/monocle-original.png&resize=150&greyscale=true&flop=true&rotate=45'/>
 ```
 
-![Monocle Small](http://dgj5ep7xp9u24.cloudfront.net/transform_image?src=https://raw.githubusercontent.com/crowdtap/monocle/master/doc/images/monocle-original.png&resize=300&greyscale=true&flop=true&rotate=45)
+![Monocle Small](http://dgj5ep7xp9u24.cloudfront.net/transform_image?src=https://raw.githubusercontent.com/crowdtap/monocle/master/doc/images/monocle-original.png&resize=150&greyscale=true&flop=true&rotate=45)
 
 ### And more...
 
 ```html
- <img src='http://monocle.crowdtap.com/transform_image?src=http://images.crowdtap.com/images/monocle-original.png&resize=300&greyscale=true&flop=true&jcn=true'/>
+ <img src='http://monocle.crowdtap.com/transform_image?src=http://images.crowdtap.com/images/monocle-original.png&resize=150&greyscale=true&flop=true&jcn=true'/>
 ```
 
-![Monocle Small](http://dgj5ep7xp9u24.cloudfront.net/transform_image?src=https://raw.githubusercontent.com/crowdtap/monocle/master/doc/images/monocle-original.png&resize=300&greyscale=true&flop=true&jcn=true)
+![Monocle Small](http://dgj5ep7xp9u24.cloudfront.net/transform_image?src=https://raw.githubusercontent.com/crowdtap/monocle/master/doc/images/monocle-original.png&resize=150&greyscale=true&flop=true&jcn=true)
 
 ### And more...
 
@@ -99,7 +99,7 @@ The Monocle URL structure are readable but they are not really clean. Having a f
 
 Monocle URL with query string parameters (used above):
 
-`http://monocle.crowdtap.com/transform_image?src=https://raw.githubusercontent.com/crowdtap/monocle/master/doc/images/monocle-original.png&resize=300`
+`http://monocle.crowdtap.com/transform_image?src=https://raw.githubusercontent.com/crowdtap/monocle/master/doc/images/monocle-original.png&resize=150`
 
 There are two ways in which you can clean it up:
 
@@ -109,19 +109,19 @@ route: `/transform_image/q/`
 
 Parameters:
 
-`src=https://raw.githubusercontent.com/crowdtap/monocle/master/doc/images/monocle-original.png&resize=300&greyscale=true&flop=true&jcn=true`
+`src=https://raw.githubusercontent.com/crowdtap/monocle/master/doc/images/monocle-original.png&resize=150&greyscale=true&flop=true&jcn=true`
 
 URL encode the src & use `/` separators to specify parameters:
 
-`src/https%3A%2F%2Fraw.githubusercontent.com%2Fcrowdtap%2Fmonocle%2Fmaster%2Fdoc%2Fimages%2Fmonocle-original.png/resize/300`
+`src/https%3A%2F%2Fraw.githubusercontent.com%2Fcrowdtap%2Fmonocle%2Fmaster%2Fdoc%2Fimages%2Fmonocle-original.png/resize/150`
 
 Use it like this:
 
-`http://monocle.crowdtap.com/transform_image/q/src/https%3A%2F%2Fraw.githubusercontent.com%2Fcrowdtap%2Fmonocle%2Fmaster%2Fdoc%2Fimages%2Fmonocle-original.png/resize/300`
+`http://monocle.crowdtap.com/transform_image/q/src/https%3A%2F%2Fraw.githubusercontent.com%2Fcrowdtap%2Fmonocle%2Fmaster%2Fdoc%2Fimages%2Fmonocle-original.png/resize/150`
 
 Which results in:
 
-![Monocle Small](http://dgj5ep7xp9u24.cloudfront.net/transform_image/q/src/https%3A%2F%2Fraw.githubusercontent.com%2Fcrowdtap%2Fmonocle%2Fmaster%2Fdoc%2Fimages%2Fmonocle-original.png/resize/300)
+![Monocle Small](http://dgj5ep7xp9u24.cloudfront.net/transform_image/q/src/https%3A%2F%2Fraw.githubusercontent.com%2Fcrowdtap%2Fmonocle%2Fmaster%2Fdoc%2Fimages%2Fmonocle-original.png/resize/150)
 
 #### Base 64 encoding
 
@@ -131,27 +131,27 @@ You can use the following format:
 
 Parameters:
 
-`src=https://raw.githubusercontent.com/crowdtap/monocle/master/doc/images/monocle-original.png&resize=300&greyscale=true&flop=true&jcn=true`
+`src=https://raw.githubusercontent.com/crowdtap/monocle/master/doc/images/monocle-original.png&resize=150&greyscale=true&flop=true&jcn=true`
 
 URL encode the src & use `/` separators to specify parameters:
 
-`src/https%3A%2F%2Fraw.githubusercontent.com%2Fcrowdtap%2Fmonocle%2Fmaster%2Fdoc%2Fimages%2Fmonocle-original.png/resize/300`
+`src/https%3A%2F%2Fraw.githubusercontent.com%2Fcrowdtap%2Fmonocle%2Fmaster%2Fdoc%2Fimages%2Fmonocle-original.png/resize/150`
 
 Base 64:
 
 `c3JjL2h0dHBzJTNBJTJGJTJGcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSUyRmNyb3dkdGFwJTJG
 bW9ub2NsZSUyRm1hc3RlciUyRmRvYyUyRmltYWdlcyUyRm1vbm9jbGUtb3JpZ2luYWwucG5nL3Jl
-c2l6ZS8zMDA=`
+c2l6ZS8xNTA=`
 
 You can use it as follow:
 
 `http://monocle.crowdtap.com/transform_image/qe/c3JjL2h0dHBzJTNBJTJGJTJGcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSUyRmNyb3dkdGFwJTJG
 bW9ub2NsZSUyRm1hc3RlciUyRmRvYyUyRmltYWdlcyUyRm1vbm9jbGUtb3JpZ2luYWwucG5nL3Jl
-c2l6ZS8zMDA=`
+c2l6ZS8xNTA=`
 
 Which results in:
 
-![Monocle Small](http://dgj5ep7xp9u24.cloudfront.net/transform_image/qe/c3JjL2h0dHBzJTNBJTJGJTJGcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSUyRmNyb3dkdGFwJTJGbW9ub2NsZSUyRm1hc3RlciUyRmRvYyUyRmltYWdlcyUyRm1vbm9jbGUtb3JpZ2luYWwucG5nL3Jlc2l6ZS8zMDA=)
+![Monocle Small](http://dgj5ep7xp9u24.cloudfront.net/transform_image/qe/c3JjL2h0dHBzJTNBJTJGJTJGcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSUyRmNyb3dkdGFwJTJGbW9ub2NsZSUyRm1hc3RlciUyRmRvYyUyRmltYWdlcyUyRm1vbm9jbGUtb3JpZ2luYWwucG5nL3Jlc2l6ZS8xNTA=)
 
 
 ## Caching considerations
@@ -168,28 +168,18 @@ syntax_ to load the images from Monocle.
 Instead of using query parameters:
 
 ```html
- <img src='http://monocle.crowdtap.com/transform_image?src=http://images.crowdtap.com/images/monocle-original.png&resize=300'/>
+ <img src='http://monocle.crowdtap.com/transform_image?src=http://images.crowdtap.com/images/monocle-original.png&resize=150'/>
 ```
 
 Hence the route is reorganized using a series of `param/value` where values are URL encoded:
 
 ```html
- <img src='http://monocle.crowdtap.com/transform_image/q/src/http%3A%2F%2Fimages.crowdtap.com%2Fimages%2Fmonocle-original.png/resize/300'/>
+ <img src='http://monocle.crowdtap.com/transform_image/q/src/http%3A%2F%2Fimages.crowdtap.com%2Fimages%2Fmonocle-original.png/resize/150'/>
 ```
 
 Now the route will be recorded by the cache. The next time a visitor hits that
 route it will be served by the cache directly, and the Monocle backend service
 will not be called.
-
-## Image helpers - TBD
-
-## Try it!
-
-```
-http://magickly.jux.com/?src=https://github.com/crowdtap/monocle/raw/master/doc/images/monocle-man.jpg&resize=600&flop=true
-```
-
-![Monocle Small](http://magickly.jux.com/?src=https://github.com/crowdtap/monocle/raw/master/doc/images/monocle-man.jpg&resize=600&flop=true)
 
 ## Credits
 
