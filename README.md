@@ -89,8 +89,6 @@ Notice how the `src` for the image is url encoded.
 
 ![Monocle Small](http://dgj5ep7xp9u24.cloudfront.net/transform_image?src=https://raw.githubusercontent.com/crowdtap/monocle/master/doc/images/monocle-original.png&resize=150&greyscale=true&flop=true&jcn=true)
 
-### And more...
-
 An extensive list of parameters you can use are available in the [Dragonfly documentation](http://markevans.github.io/dragonfly/file.ImageMagick.html)
 
 ### Cleaning up monocle url
