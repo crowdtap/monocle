@@ -1,0 +1,38 @@
+upstream monocle {
+  server unix:/srv/monocle/shared/pids/unicorn.sock max_fails=1 fail_timeout=5;
+  server unix:/srv/monocle/shared/pids/unicorn.sock max_fails=1 fail_timeout=5;
+  server unix:/srv/monocle/shared/pids/unicorn.sock max_fails=1 fail_timeout=5;
+}
+
+server {
+  listen 80;
+  server_name _;
+
+  access_log /var/log/nginx/access.log standard;
+  root /srv/monocle/current/public;
+
+  error_page 500 502 503 504 /500.html;
+
+  location /health {
+    access_log off;
+    proxy_pass http://monocle;
+  }
+
+  try_files $uri @monocle;
+  location @monocle {
+    expires 1y;
+    add_header Cache-Control public;
+    gzip_static on;
+
+    # Some browsers still send conditional-GET requests if there's a
+    # Last-Modified header or an ETag header even if they haven't
+    # reached the expiry date sent in the Expires header.
+    add_header Last-Modified "";
+    add_header ETag "";
+    add_header Access-Control-Allow-Origin "*";
+
+    proxy_read_timeout 60s;
+    proxy_send_timeout 60s;
+    proxy_pass http://monocle;
+  }
+}
