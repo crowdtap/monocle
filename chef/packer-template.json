@@ -1,0 +1,36 @@
+{
+  "builders": [
+    {
+      "type": "amazon-ebs",
+      "source_ami": "ami-e84d8480",
+      "ssh_username": "ubuntu",
+      "instance_type": "c3.large",
+      "ami_block_device_mappings": [
+        {
+          "device_name": "/dev/sda1",
+          "volume_type": "gp2",
+          "volume_size": 10
+        }
+      ],
+      "region": "us-east-1",
+      "vpc_id": "vpc-87cb79ec",
+      "subnet_id": "subnet-e90c41c1",
+
+      "ami_name": "monocle-app-{{isotime | clean_ami_name}}"
+    }
+  ],
+
+  "provisioners": [
+    {
+      "type": "shell",
+      "inline": ["curl -L https://www.opscode.com/chef/install.sh | sudo bash",
+                 "sudo /opt/chef/embedded/bin/gem install --no-ri --no-rdoc chef-sugar"]
+    },
+    {
+      "type": "chef-solo",
+      "cookbook_paths": ["berks-cookbooks"],
+      "run_list": ["recipe[monocle::app]"],
+      "skip_install": true
+    }
+  ]
+}
