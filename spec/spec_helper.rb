@@ -14,6 +14,5 @@ Dir[File.expand_path('../../app/*.rb', __FILE__)].each do |file|
 end
 
 RSpec.configure do |config|
-  config.color_enabled = true
   config.order = "random"
 end
