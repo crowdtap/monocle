@@ -79,7 +79,40 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.provision :chef_solo do |chef|
     chef.json = {
-      :application => 'monocle'
+      authorization: {
+        sudo: {
+          users: %w[vagrant deploy]
+        }
+      },
+      deploy_roles: ['vagrant-chef-test'],
+      newrelic: {
+        app_name: 'Not Test Application'
+      },
+      rubies: ['2.1.2-github1'],
+
+      :fiance => {
+        :url => 'http://fiance.local'
+      },
+      :monocle => {
+        :url => '//monocle.local'
+      },
+      :promiscuous => {
+        :amqp_url => 'amqp://guest:guest@rabbit.local:5672',
+        :redis_url => 'redis://redis.local:6379'
+      },
+      :redis => {
+        :url => 'redis://redis.local:6379'
+      },
+      :sidekiq => {
+        :redis_url => 'redis://redis.local:6379'
+      },
+      :sniper => {
+        :url => 'http://sniper.local',
+        :notification_url => 'http://sniper-bg.local'
+      },
+      :waldo => {
+        :url => 'http://waldo.local'
+      }
     }
 
     chef.run_list = [

@@ -1,10 +1,10 @@
 DEPENDENCIES
   crowdtap-base
     git: ssh://git@github.com/crowdtap/chef-base.git
-    revision: 6c35767ab48ed05e6808807c56a3f7fb5e5d5f0e
+    revision: 295ca6ba15d0d3879dba9a0c45fe7e794e2dbcb8
   crowdtap-ruby
     git: ssh://git@github.com/crowdtap/chef-ruby.git
-    revision: 523aa24cbe9e33c2a13e89fa9b1a2417b8522ea3
+    revision: c79acd0642220cf8d56540a88a64f2ea0b1d81bb
   monocle
     path: .
     metadata: true
@@ -16,7 +16,7 @@ GRAPH
     rsyslog (>= 0.0.0)
   build-essential (2.0.6)
   chef_handler (1.1.6)
-  crowdtap-base (0.1.0)
+  crowdtap-base (0.1.1)
     aws (~> 2.4.0)
     datadog (>= 0.0.0)
     git (~> 4.0.2)
