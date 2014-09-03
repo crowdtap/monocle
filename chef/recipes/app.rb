@@ -1,3 +1,10 @@
+package 'advancecomp'
+package 'gifsicle'
+package 'jhead'
+package 'jpegoptim'
+package 'libjpeg-progs'
+package 'optipng'
+package 'pngcrush'
 include_recipe 'crowdtap-ruby::unicorn'
 
 template "/etc/nginx/sites-available/monocle" do
