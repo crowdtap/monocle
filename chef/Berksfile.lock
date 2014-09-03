@@ -1,10 +1,10 @@
 DEPENDENCIES
   crowdtap-base
     git: ssh://git@github.com/crowdtap/chef-base.git
-    revision: d045f23b6a284c466df445706f5fadffc451f20b
+    revision: 8cfc2e62375f9d64210772c6aa3f75a80916350f
   crowdtap-ruby
     git: ssh://git@github.com/crowdtap/chef-ruby.git
-    revision: 54ec1a009009eda9b3a4005cabf1c9212d0dcbd6
+    revision: 501d464f40e4bf7c661d8584425266b6c6049bc8
   monocle
     path: .
     metadata: true
