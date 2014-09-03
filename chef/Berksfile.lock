@@ -1,10 +1,10 @@
 DEPENDENCIES
   crowdtap-base
     git: ssh://git@github.com/crowdtap/chef-base.git
-    revision: 295ca6ba15d0d3879dba9a0c45fe7e794e2dbcb8
+    revision: d045f23b6a284c466df445706f5fadffc451f20b
   crowdtap-ruby
     git: ssh://git@github.com/crowdtap/chef-ruby.git
-    revision: c79acd0642220cf8d56540a88a64f2ea0b1d81bb
+    revision: 54ec1a009009eda9b3a4005cabf1c9212d0dcbd6
   monocle
     path: .
     metadata: true
@@ -15,13 +15,20 @@ GRAPH
   bluepill (2.3.1)
     rsyslog (>= 0.0.0)
   build-essential (2.0.6)
+  chef-client (3.7.0)
+    cron (>= 1.2.0)
+    logrotate (>= 1.2.0)
   chef_handler (1.1.6)
-  crowdtap-base (0.1.1)
+  cron (1.4.0)
+  crowdtap-base (0.1.2)
     aws (~> 2.4.0)
+    chef-client (>= 0.0.0)
     datadog (>= 0.0.0)
     git (~> 4.0.2)
+    hostname (>= 0.0.0)
     htop (~> 2.0.0)
     ntp (~> 1.6.4)
+    ohai (>= 0.0.0)
     sudo (~> 2.7.0)
     timezone-ii (~> 0.2.0)
     user (~> 0.3.0)
@@ -46,8 +53,12 @@ GRAPH
     windows (>= 0.0.0)
     yum (~> 3.0)
     yum-epel (>= 0.0.0)
+  hostname (0.3.0)
+    hostsfile (>= 0.0.0)
+  hostsfile (2.4.5)
   htop (2.0.0)
     yum-repoforge (>= 0.0.0)
+  logrotate (1.6.0)
   monocle (0.1.0)
     crowdtap-ruby (>= 0.0.0)
   newrelic (2.0.0)
