@@ -5,6 +5,9 @@ package 'jpegoptim'
 package 'libjpeg-progs'
 package 'optipng'
 package 'pngcrush'
+
+node.set.deploy_roles = ['app']
+
 include_recipe 'crowdtap-ruby::unicorn'
 
 template "/etc/nginx/sites-available/monocle" do
