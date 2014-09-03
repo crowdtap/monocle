@@ -6,6 +6,7 @@ package 'libjpeg-progs'
 package 'optipng'
 package 'pngcrush'
 
+node.set.hostname_base = "#{node.application}-app"
 node.set.deploy_roles = ['app']
 
 include_recipe 'crowdtap-ruby::unicorn'
