@@ -15,6 +15,7 @@
       "region": "us-east-1",
       "vpc_id": "vpc-87cb79ec",
       "subnet_id": "subnet-e90c41c1",
+      "iam_instance_profile": "production",
 
       "ami_name": "monocle-app-{{isotime | clean_ami_name}}"
     }
