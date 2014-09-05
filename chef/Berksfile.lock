@@ -1,10 +1,11 @@
 DEPENDENCIES
   crowdtap-base
     git: ssh://git@github.com/crowdtap/chef-base.git
-    revision: 8cfc2e62375f9d64210772c6aa3f75a80916350f
+    revision: 41dc4fa2220e43c2826e5b6060ff5f786e3cb0c8
   crowdtap-ruby
     git: ssh://git@github.com/crowdtap/chef-ruby.git
-    revision: 501d464f40e4bf7c661d8584425266b6c6049bc8
+    revision: 30cad52e8ea7438161389175eec435a4e2615bc7
+    ref: unicorn
   monocle
     path: .
     metadata: true
@@ -20,7 +21,7 @@ GRAPH
     logrotate (>= 1.2.0)
   chef_handler (1.1.6)
   cron (1.4.0)
-  crowdtap-base (0.1.2)
+  crowdtap-base (1.0.0)
     aws (~> 2.4.0)
     chef-client (>= 0.0.0)
     datadog (>= 0.0.0)
@@ -34,8 +35,8 @@ GRAPH
     user (~> 0.3.0)
     vim (~> 1.1.2)
     zsh (~> 1.0.0)
-  crowdtap-ruby (0.1.0)
-    crowdtap-base (>= 0.0.0)
+  crowdtap-ruby (0.1.1)
+    crowdtap-base (~> 1.0.0)
     newrelic (~> 2.0.0)
     nginx (~> 2.7.4)
     python (~> 1.4.6)
@@ -59,7 +60,7 @@ GRAPH
   htop (2.0.0)
     yum-repoforge (>= 0.0.0)
   logrotate (1.6.0)
-  monocle (0.1.0)
+  monocle (0.1.1)
     crowdtap-ruby (>= 0.0.0)
   newrelic (2.0.0)
     curl (>= 0.0.0)
@@ -91,10 +92,10 @@ GRAPH
   vim (1.1.2)
   windows (1.34.2)
     chef_handler (>= 0.0.0)
-  yum (3.2.4)
-  yum-epel (0.4.0)
+  yum (3.3.1)
+  yum-epel (0.5.1)
     yum (~> 3.0)
-  yum-repoforge (0.3.0)
+  yum-repoforge (0.4.0)
     yum (~> 3.0)
     yum-epel (>= 0.0.0)
   zsh (1.0.0)

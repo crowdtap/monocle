@@ -1,6 +1,6 @@
 source "https://supermarket.getchef.com"
 
 cookbook 'crowdtap-base', :git=> 'ssh://git@github.com/crowdtap/chef-base.git'
-cookbook 'crowdtap-ruby', :git=> 'ssh://git@github.com/crowdtap/chef-ruby.git'
+cookbook 'crowdtap-ruby', :git=> 'ssh://git@github.com/crowdtap/chef-ruby.git', :ref => 'unicorn-start-is-deploy'
 
 metadata
