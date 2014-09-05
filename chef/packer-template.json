@@ -1,10 +1,14 @@
 {
+  "variables": {
+    "ssh_key": "{{env `HOME`}}/.ssh/id_rsa"
+  },
   "builders": [
     {
       "type": "amazon-ebs",
-      "source_ami": "ami-e84d8480",
-      "ssh_username": "ubuntu",
-      "instance_type": "c3.large",
+      "source_ami": "ami-4ac56422",
+      "ssh_username": "deploy",
+      "ssh_private_key_file": "{{user `ssh_key`}}",
+      "instance_type": "c3.xlarge",
       "ami_block_device_mappings": [
         {
           "device_name": "/dev/sda1",
@@ -22,11 +26,6 @@
   ],
 
   "provisioners": [
-    {
-      "type": "shell",
-      "inline": ["curl -L https://www.opscode.com/chef/install.sh | sudo bash",
-                 "sudo /opt/chef/embedded/bin/gem install --no-ri --no-rdoc chef-sugar"]
-    },
     {
       "type": "chef-solo",
       "cookbook_paths": ["berks-cookbooks"],
