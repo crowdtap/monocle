@@ -9,6 +9,8 @@ package 'pngcrush'
 node.set.hostname_base = "#{node.application}-app"
 node.set.deploy_roles = ['app']
 
+node.set[:crowdtap][:deploy_branch] = 'ruby-2.1.2'
+
 include_recipe 'crowdtap-ruby::unicorn'
 
 template "/etc/nginx/sites-available/monocle" do
@@ -20,3 +22,8 @@ template "/etc/nginx/sites-available/monocle" do
 end
 
 nginx_site 'monocle'
+
+service 'monocle' do
+  action :start
+  only_if { server_in_production? }
+end
