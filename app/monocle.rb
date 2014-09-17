@@ -20,7 +20,7 @@ class Monocle
     Magickly.dragonfly.configure do |config|
       config.job :optimize do
         begin
-          image_optim = ImageOptim.new(:pngout => false, :svgo => false)
+          image_optim = ImageOptim.new(:pngout => false, :svgo => false, :pngcrush => false)
           image_optim.optimize_image!(@job.path)
         rescue Dragonfly::DataStorage::DataNotFound
         end
