@@ -12,7 +12,7 @@ require 'new_relic/rack/error_collector'
 
 if ENV['RACK_ENV'] == 'production'
   Raven.configure do |config|
-      config.dsn = 'https://99b9113b8e334b07ad944209d3cd26da:60f24e5aeffd4431a76bb4da563809b2@app.getsentry.com/31772'
+    config.dsn = 'https://99b9113b8e334b07ad944209d3cd26da:60f24e5aeffd4431a76bb4da563809b2@app.getsentry.com/31772'
   end
 end
 use Raven::Rack
