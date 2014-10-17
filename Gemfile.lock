@@ -9,6 +9,14 @@ GIT
       httparty (~> 0.13)
       sinatra (~> 1.2)
 
+GIT
+  remote: https://github.com/getsentry/raven-ruby.git
+  revision: bd026531c390a7fbc71980871a7951bc0f2d737f
+  specs:
+    sentry-raven (0.10.1)
+      faraday (>= 0.7.6)
+      uuidtools
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -76,9 +84,6 @@ GEM
       rspec-support (~> 3.0.0)
     rspec-support (3.0.4)
     safe_yaml (1.0.3)
-    sentry-raven (0.10.1)
-      faraday (>= 0.7.6)
-      uuidtools
     sinatra (1.4.5)
       rack (~> 1.4)
       rack-protection (~> 1.4)
@@ -109,6 +114,6 @@ DEPENDENCIES
   rack-protection (= 1.5.0)
   rack-test
   rspec
-  sentry-raven
+  sentry-raven!
   unicorn
   webmock
