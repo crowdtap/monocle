@@ -13,7 +13,7 @@ class Monocle
   end
 
   def call(env)
-      @app.call(env)
+    @app.call(env)
   end
 
   private
