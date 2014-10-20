@@ -2,6 +2,7 @@ require 'rack'
 
 class Monocle
   def initialize
+    configure_errors
     configure_jobs
 
     @app = Rack::Builder.new do
@@ -16,6 +17,14 @@ class Monocle
   end
 
   private
+  def configure_errors
+    Magickly::App.configure do |config|
+      config.error Addressable::URI::InvalidURIError do
+        404
+      end
+    end
+  end
+
   def configure_jobs
     Magickly.dragonfly.configure do |config|
       config.job :optimize do

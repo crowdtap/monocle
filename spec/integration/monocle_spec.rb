@@ -19,6 +19,14 @@ describe Monocle do
       last_response.status.should == 404
     end
 
+    it "returns 404 if the image isn't a url" do
+      get '/transform_image/q/src/undefined/optimized_thumb/200x100'
+      last_response.status.should == 404
+
+      get 'transform_image/qe/c3JjL3VuZGVmaW5lZC9vcHRpbWl6ZWRfdGh1bWIvMjR4MjRe'
+      last_response.status.should == 404
+    end
+
     it "returns 200 if the image exists" do
       stub_request(:get, 'http://www.example.com/images/logo.jpg')
         .to_return(
