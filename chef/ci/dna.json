@@ -1,0 +1,10 @@
+{
+  "run_list": ["tokumx::hugepagesok"],
+  "tokumx": {
+    "repo": {
+      "name": "tokumx-enterprise",
+      "uri": "http://s3.amazonaws.com/tokumx-enterprise-debs"
+    },
+    "package": "tokumx-enterprise"
+  }
+}
