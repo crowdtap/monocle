@@ -2,5 +2,7 @@ source "https://supermarket.getchef.com"
 
 cookbook 'crowdtap-base', :git=> 'ssh://git@github.com/crowdtap/chef-base.git'
 cookbook 'crowdtap-ruby', :git=> 'ssh://git@github.com/crowdtap/chef-ruby.git'
+cookbook 'le_rsyslog', github: 'joeheung/le_rsyslog', branch: 'datahub_integration'
+
 
 metadata
