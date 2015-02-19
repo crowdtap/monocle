@@ -1,0 +1,5 @@
+{
+  "app_name": "monocle",
+  "app_stack": "app",
+  "instance_size": "c3.xlarge"
+}
