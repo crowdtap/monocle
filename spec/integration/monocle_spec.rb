@@ -37,5 +37,16 @@ describe Monocle do
       get '/transform_image/q/src/http%3A%2F%2Fwww.example.com%2Fimages%2Flogo.jpg/optimized_thumb/200x100'
       last_response.status.should == 200
     end
+
+    it "attempts to fix invalid base64" do
+      stub_request(:get, 'http://www.example.com/images/logo.jpg')
+        .to_return(
+           :status  => 200,
+           :body    => File.read('spec/fixtures/crowdtap-logo.jpg'),
+           :headers => {}
+        )
+      get 'transform_image/qe/c3JjL2h0dHAlM0ElMkYlMkZ3d3cuZXhhbXBsZS5jb20lMkZpbWFnZXMlMkZsb2dvLmpwZy9vcHRpbWl6ZWRfdGh1bWIvMjAweDEwMC9hcHAvY3Jvd2R0YXA'
+      last_response.status.should == 200
+    end
   end
 end
