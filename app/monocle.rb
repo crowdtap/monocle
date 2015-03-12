@@ -13,7 +13,16 @@ class Monocle
   end
 
   def call(env)
-    @app.call(env)
+    begin
+      @app.call(env)
+    rescue ArgumentError => e
+      if e.message == "invalid base64"
+        env["PATH_INFO"] = "#{env["PATH_INFO"]}="
+        @app.call(env)
+      else
+        raise e
+      end
+    end
   end
 
   private
