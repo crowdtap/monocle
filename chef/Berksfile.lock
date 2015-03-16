@@ -1,10 +1,18 @@
 DEPENDENCIES
+  consul
+    git: git://github.com/donaldguy/consul-cookbook.git
+    revision: 2a0a0d154203fda05aea548e9915adb593654874
+    branch: consul-0.5.0-conditional
   crowdtap-base
     git: ssh://git@github.com/crowdtap/chef-base.git
-    revision: 409fc0b7a8a79c19cfefcb6a69678d532f1e14bf
+    revision: b707d3da4f272aa27d8511348de0577759206413
+  crowdtap-consul
+    git: ssh://git@github.com/crowdtap/chef-datastores.git
+    revision: 5b300e5f962fdab66e4c5f97db6a54d826945bf0
+    rel: crowdtap-consul
   crowdtap-ruby
     git: ssh://git@github.com/crowdtap/chef-ruby.git
-    revision: afd5d4613ee18dbb9c9f9a2655c6da1a99cc3a2d
+    revision: 7cbea4bb1d4c1422cc60928bf4dae32191d60463
   le_rsyslog
     git: git://github.com/joeheung/le_rsyslog.git
     revision: 8c075657ef38455c3ebc240b003faa2a97fe21af
@@ -23,16 +31,23 @@ GRAPH
     cron (>= 1.2.0)
     logrotate (>= 1.2.0)
     windows (~> 1.11)
+  chef-provisioning (0.1.2)
+    build-essential (>= 0.0.0)
   chef_handler (1.1.6)
+  consul (0.8.3)
+    chef-provisioning (>= 0.0.0)
+    golang (~> 1.4)
+    libarchive (>= 0.0.0)
+    runit (>= 0.0.0)
+    yum-repoforge (>= 0.0.0)
   cron (1.6.1)
-  crowdtap-base (1.7.1)
+  crowdtap-base (2.1.0)
     apt (~> 2.6.1)
     aws (~> 2.4.0)
     chef-client (>= 0.0.0)
+    crowdtap-consul (>= 0.0.0)
     datadog (>= 0.0.0)
-    git (~> 4.0.2)
     hostname (>= 0.0.0)
-    htop (~> 2.0.0)
     le_rsyslog (>= 0.0.0)
     ntp (~> 1.7.0)
     ohai (>= 0.0.0)
@@ -40,35 +55,30 @@ GRAPH
     sysctl (~> 0.6.0)
     timezone-ii (~> 0.2.0)
     user (~> 0.3.0)
-    vim (~> 1.1.2)
-    zsh (~> 1.0.0)
-  crowdtap-ruby (2.0.2)
+  crowdtap-consul (0.3.5)
+    consul (>= 0.0.0)
+    crowdtap-base (>= 0.0.0)
+  crowdtap-ruby (3.0.4)
     aws (~> 2.4.0)
     crowdtap-base (>= 0.0.0)
     newrelic (~> 2.0.0)
     nginx (~> 2.7.4)
-    rbenv (~> 1.7.1)
+    ruby-ng (>= 0.0.0)
   curl (2.0.1)
   datadog (2.0.0)
     apt (>= 0.0.0)
     chef_handler (~> 1.1.0)
     yum (>= 0.0.0)
-  dmg (2.2.2)
-  git (4.0.2)
-    build-essential (>= 0.0.0)
-    dmg (>= 0.0.0)
-    runit (>= 1.0.0)
-    windows (>= 0.0.0)
-    yum (~> 3.0)
-    yum-epel (>= 0.0.0)
+  golang (1.5.0)
   hostname (0.3.0)
     hostsfile (>= 0.0.0)
   hostsfile (2.4.5)
-  htop (2.0.0)
-    yum-repoforge (>= 0.0.0)
   le_rsyslog (0.1.2)
-  logrotate (1.8.0)
-  monocle (0.1.0)
+  libarchive (0.4.1)
+    apt (~> 2.5)
+    build-essential (~> 2.0)
+  logrotate (1.9.0)
+  monocle (1.0.0)
     crowdtap-ruby (>= 0.0.0)
   newrelic (2.0.0)
     curl (>= 0.0.0)
@@ -81,13 +91,11 @@ GRAPH
     yum-epel (~> 0.3)
   ntp (1.7.0)
   ohai (2.0.1)
-  rbenv (1.7.1)
+  rsyslog (1.15.0)
+  ruby-ng (0.3.0)
     apt (>= 0.0.0)
     build-essential (>= 0.0.0)
-    git (>= 0.0.0)
-    ohai (>= 1.1)
-  rsyslog (1.14.0)
-  runit (1.5.16)
+  runit (1.5.18)
     build-essential (>= 0.0.0)
     yum (~> 3.0)
     yum-epel (>= 0.0.0)
@@ -96,7 +104,6 @@ GRAPH
     ohai (>= 0.0.0)
   timezone-ii (0.2.0)
   user (0.3.0)
-  vim (1.1.2)
   windows (1.36.6)
     chef_handler (>= 0.0.0)
   yum (3.5.3)
@@ -105,4 +112,3 @@ GRAPH
   yum-repoforge (0.5.0)
     yum (~> 3.0)
     yum-epel (>= 0.0.0)
-  zsh (1.0.1)

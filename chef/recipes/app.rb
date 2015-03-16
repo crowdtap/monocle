@@ -7,7 +7,7 @@ package 'optipng'
 package 'pngquant'
 
 crowdtap_ruby_application "monocle" do
-  ruby_version '2.1.2-github1'
+  ruby_version '2.1'
   unicorns
   nginx do
     template 'etc/nginx/sites-available/monocle.erb'
