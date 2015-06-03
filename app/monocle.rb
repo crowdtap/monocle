@@ -17,7 +17,12 @@ class Monocle
       @app.call(env)
     rescue ArgumentError => e
       if e.message == "invalid base64"
-        env["PATH_INFO"] = "#{env["PATH_INFO"]}="
+        if env["PATH_INFO"].match('%0D%0A')
+          env["PATH_INFO"].gsub!('%0D%0A', '')
+        else
+          env["PATH_INFO"] = "#{env["PATH_INFO"]}="
+        end
+        puts env["PATH_INFO"]
         @app.call(env)
       else
         raise e
