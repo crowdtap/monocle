@@ -21,4 +21,4 @@ deployment:
   production:
     branch: master
     commands:
-      - curl -XPOST http://deploy:20dca2067c57c415fd797184715b1b@deployer.crowdtap.us/deploys/$CIRCLE_PROJECT_REPONAME/production/$CIRCLE_SHA1
+      - curl -XPOST https://deploy:20dca2067c57c415fd797184715b1b@deployer.crowdtap.us/deploys/$CIRCLE_PROJECT_REPONAME/production/$CIRCLE_SHA1
