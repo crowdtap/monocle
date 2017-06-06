@@ -2,9 +2,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: iris
+  name: monocle
   labels:
-    app: iris
+    app: monocle
 spec:
   type: LoadBalancer
   ports:
@@ -13,4 +13,4 @@ spec:
       port: 80
       targetPort: 80
   selector:
-    app: iris
+    app: monocle
