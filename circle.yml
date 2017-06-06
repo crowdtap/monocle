@@ -5,6 +5,26 @@ general:
 machine:
   timezone:
     America/New_York
+  services:
+    - docker
+  environment:
+    RAILS_ENV: test
+    PATH: $PATH:node_modules/.bin
+    EXTERNAL_REGISTRY_BASE_DOMAIN: 535700620794.dkr.ecr.us-east-1.amazonaws.com
+    REPOSITORY_NAME: crowdtap
+    REGISTRY_EMAIL: none
+    REGISTRY_USERNAME: AWS
+    AWS_DEFAULT_REGION: us-east-1
+
+    CI_SHA1: $CIRCLE_SHA1
+    CI_BRANCH: $CIRCLE_BRANCH
+    CI_BUILD_NUM: $CIRCLE_BUILD_NUM
+
+    DOCKERTAG: crowdtap
+    SERVICENAME: crowdtap
+
+    CLUSTER_NICKNAME_PRODUCTION:  production-1.working.crowdtap.com
+    CLUSTER_NICKNAME_WORKING: working-1.working.crowdtap.com
 dependencies:
   pre:
     - if ! berks --version; then
@@ -17,8 +37,14 @@ dependencies:
     - sudo chef-client -z -j chef/ci/dna.json
   cache_directories:
     - ./chefdk_0.3.2-1_amd64.deb
+
 deployment:
-  production:
-    branch: master
+  staging:
+    branch: kubernetes
     commands:
-      - curl -XPOST https://deploy:20dca2067c57c415fd797184715b1b@deployer.crowdtap.us/deploys/$CIRCLE_PROJECT_REPONAME/production/$CIRCLE_SHA1
+      - docker-push -f deploy/staging.config
+      - ensure-kubectl
+      - prepare-kubectl
+      - kubectl config set-context staging --user $CLUSTER_NICKNAME_WORKING --cluster $CLUSTER_NICKNAME_WORKING --namespace staging
+      - kubectl config use-context staging
+      - k8s-deploy -f deploy/staging.config

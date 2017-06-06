@@ -1,0 +1,31 @@
+---
+kind: Deployment
+apiVersion: extensions/v1beta1
+metadata:
+  labels:
+    app: monocle
+  name: monocle
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: monocle
+    spec:
+      containers:
+      - name: monocle
+        image: 535700620794.dkr.ecr.us-east-1.amazonaws.com/monocle:latest
+        imagePullPolicy: Always
+        env:
+          - name: RAILS_ENV
+            valueFrom:
+              configMapKeyRef:
+                name: monocle
+                key: rails_env
+          - name: RACK_ENV
+            valueFrom:
+              configMapKeyRef:
+                name: monocle
+                key: rack_env
+          - name: LOG_TO_STDOUT
+            value: "1"
