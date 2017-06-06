@@ -25,18 +25,6 @@ machine:
 
     CLUSTER_NICKNAME_PRODUCTION:  production-1.working.crowdtap.com
     CLUSTER_NICKNAME_WORKING: working-1.working.crowdtap.com
-dependencies:
-  pre:
-    - if ! berks --version; then
-        if ! [ -f chefdk_0.3.2-1_amd64.deb ]; then
-          wget http://opscode-omnibus-packages.s3.amazonaws.com/ubuntu/12.04/x86_64/chefdk_0.3.2-1_amd64.deb;
-        fi;
-        sudo dpkg -i chefdk_0.3.2-1_amd64.deb;
-      fi
-    - berks vendor -b chef/ci/Berksfile cookbooks
-    - sudo chef-client -z -j chef/ci/dna.json
-  cache_directories:
-    - ./chefdk_0.3.2-1_amd64.deb
 
 deployment:
   staging:
