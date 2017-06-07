@@ -26,6 +26,14 @@ machine:
     CLUSTER_NICKNAME_PRODUCTION:  production-1.working.crowdtap.com
     CLUSTER_NICKNAME_WORKING: working-1.working.crowdtap.com
 
+dependencies:
+  pre:
+    - gem install bundler
+    - npm install
+    - docker-pull
+    - bundle install --path .localgems
+    - docker build --rm=false -t ${DOCKERTAG}:latest .
+
 deployment:
   staging:
     branch: kubernetes
