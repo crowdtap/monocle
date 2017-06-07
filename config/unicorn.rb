@@ -19,6 +19,7 @@ else
   # more will usually help for _short_ waits on databases/caches.
   #worker_processes 8
   worker_processes 2
+  listen 80
 
   # Help ensure your application will always spawn in the symlinked
   # "current" directory that Capistrano sets up.
