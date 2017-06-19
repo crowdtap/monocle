@@ -20,6 +20,7 @@ else
   #worker_processes 8
   worker_processes 2
   listen 80
+  logger Logger.new(STDOUT)
 
   # Help ensure your application will always spawn in the symlinked
   # "current" directory that Capistrano sets up.
