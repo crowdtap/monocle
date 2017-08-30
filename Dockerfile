@@ -1,4 +1,4 @@
-FROM ruby:2.4
+FROM ruby:2.1.5
 
 ENV RAILS_ROOT /var/www/monocle
 ENV GEM_PATH $RAILS_ROOT/.localgems
