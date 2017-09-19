@@ -41,6 +41,5 @@ deployment:
       - docker-push -f deploy/staging.config
       - ensure-kubectl
       - prepare-kubectl
-      - kubectl config set-context staging --user $CLUSTER_NICKNAME_WORKING --cluster $CLUSTER_NICKNAME_WORKING --namespace staging
       - kubectl config use-context staging
       - k8s-deploy -f deploy/staging.config
