@@ -248,4 +248,5 @@ production:
 # here.  By default, the staging environment has the agent turned on.
 staging:
   <<: *default_settings
-  monitor_mode: false
+  monitor_mode: true
+  app_name: Monocle (Staging)
