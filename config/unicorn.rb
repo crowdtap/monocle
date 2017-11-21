@@ -7,7 +7,7 @@
 # documentation.
 #
 if ENV['RACK_ENV'] == 'development'
-  worker_processes j
+  worker_processes 1
 
   if ENV['BOXEN_SOCKET_DIR']
     listen "#{ENV['BOXEN_SOCKET_DIR']}/monocle", :backlog => 64
