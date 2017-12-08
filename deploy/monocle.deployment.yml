@@ -37,10 +37,3 @@ spec:
         # - name: server-root
         #   mountPath: /srv/crowdtap/public
         imagePullPolicy: Always
-        resources:
-          limits:
-            cpu: "1"
-            memory: 32Mi
-          requests:
-            cpu: "1"
-            memory: 32Mi
