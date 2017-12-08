@@ -30,3 +30,17 @@ spec:
                 key: rack_env
           - name: LOG_TO_STDOUT
             value: "1"
+      # the nginx container
+      - name: monocle-nginx
+        image: 535700620794.dkr.ecr.us-east-1.amazonaws.com/monocle-nginx:latest
+        volumeMounts:
+        # - name: server-root
+        #   mountPath: /srv/crowdtap/public
+        imagePullPolicy: Always
+        resources:
+          limits:
+            cpu: "1"
+            memory: 32Mi
+          requests:
+            cpu: "1"
+            memory: 32Mi

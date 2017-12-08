@@ -23,8 +23,8 @@ machine:
     DOCKERTAG: monocle
     SERVICENAME: monocle
 
-    CLUSTER_NICKNAME_PRODUCTION:  production-1.working.crowdtap.com
-    CLUSTER_NICKNAME_WORKING: working-1.working.crowdtap.com
+    # for nginx sidecar
+    DOCKERTAG_NGINX: monocle-nginx
 
 dependencies:
   pre:
@@ -33,11 +33,16 @@ dependencies:
     - docker-pull
     - bundle install --path .localgems
     - docker build --rm=false -t ${DOCKERTAG}:latest .
+    - docker build --rm=false -t ${DOCKERTAG_NGINX}:latest deploy/nginx-sidecar
 
 deployment:
   staging:
     branch: kubernetes
     commands:
+      # nginx sidecar
+      - docker tag -f "${DOCKERTAG_NGINX}:latest" "${EXTERNAL_REGISTRY_BASE_DOMAIN}/${DOCKERTAG_NGINX}:${CI_SHA1}"
+      - docker push "${EXTERNAL_REGISTRY_BASE_DOMAIN}/${DOCKERTAG_NGINX}:${CI_SHA1}"
+      # the app
       - docker-push -f deploy/staging.config
       - ensure-kubectl
       - prepare-kubectl

@@ -19,7 +19,7 @@ else
   # more will usually help for _short_ waits on databases/caches.
   #worker_processes 8
   worker_processes 4
-  listen 80
+  listen 3000
   logger Logger.new(STDOUT)
 
   # Help ensure your application will always spawn in the symlinked
