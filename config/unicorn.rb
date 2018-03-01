@@ -13,26 +13,29 @@ if ENV['RACK_ENV'] == 'development'
     listen "#{ENV['BOXEN_SOCKET_DIR']}/monocle", :backlog => 64
   end
 else
-  user 'www-data', 'www-data'
+  #user 'www-data', 'www-data'
 
   # Use at least one worker per core if you're on a dedicated server,
   # more will usually help for _short_ waits on databases/caches.
-  worker_processes 8
+  #worker_processes 8
+  worker_processes Integer(ENV["UNICORN_WORKERS"] || 1)
+  listen 3000
+  logger Logger.new(STDOUT)
 
   # Help ensure your application will always spawn in the symlinked
   # "current" directory that Capistrano sets up.
-  app_root = "/srv/monocle/current"
-  shared_root = "/srv/monocle/shared"
-  working_directory app_root
+  #app_root = "/srv/monocle/current"
+  #shared_root = "/srv/monocle/shared"
+  #working_directory app_root
 
   # listen on both a Unix domain socket and a TCP port,
   # we use a shorter backlog for quicker failover when busy
-  listen "#{shared_root}/pids/unicorn.sock", :backlog => 64
+  #listen "#{shared_root}/pids/unicorn.sock", :backlog => 64
 
-  pid "#{shared_root}/pids/unicorn.pid"
+  #pid "#{shared_root}/pids/unicorn.pid"
 
-  stderr_path "#{shared_root}/log/unicorn.log"
-  stdout_path "#{shared_root}/log/unicorn.log"
+  #stderr_path "#{shared_root}/log/unicorn.log"
+  #stdout_path "#{shared_root}/log/unicorn.log"
 end
 
 preload_app true

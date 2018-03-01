@@ -1,0 +1,61 @@
+---
+kind: Deployment
+apiVersion: extensions/v1beta1
+metadata:
+  labels:
+    app: monocle
+  name: monocle
+spec:
+  replicas: 12
+  revisionHistoryLimit: 2
+  template:
+    metadata:
+      labels:
+        app: monocle
+    spec:
+      containers:
+      - name: monocle
+        image: 535700620794.dkr.ecr.us-east-1.amazonaws.com/monocle:latest
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "2Gi"
+            cpu: "2"
+        env:
+          - name: RAILS_ENV
+            valueFrom:
+              configMapKeyRef:
+                name: monocle
+                key: rails_env
+          - name: RACK_ENV
+            valueFrom:
+              configMapKeyRef:
+                name: monocle
+                key: rack_env
+          - name: LOG_TO_STDOUT
+            value: "1"
+          - name: UNICORN_WORKERS
+            valueFrom:
+              configMapKeyRef:
+                name: monocle
+                key: unicorn_workers
+          - name: STATSD_HOST
+            valueFrom:
+              configMapKeyRef:
+                name: crowdtap-shared
+                key: statsd_host
+          - name: APM_HOST
+            valueFrom:
+              configMapKeyRef:
+                name: crowdtap-shared
+                key: apm_host
+          - name: APM_PORT
+            valueFrom:
+              configMapKeyRef:
+                name: crowdtap-shared
+                key: apm_port
+      # the nginx container
+      - name: monocle-nginx
+        image: 535700620794.dkr.ecr.us-east-1.amazonaws.com/monocle-nginx:latest
+        volumeMounts:
+        imagePullPolicy: Always

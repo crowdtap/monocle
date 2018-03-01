@@ -1,0 +1,10 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: monocle
+  namespace: staging
+data:
+  rails_env: staging
+  rack_env: staging
+  unicorn_workers: '4'

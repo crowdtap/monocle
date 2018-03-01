@@ -1,0 +1,10 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: monocle
+  namespace: production
+data:
+  rails_env: production
+  rack_env: production
+  unicorn_workers: '4'
