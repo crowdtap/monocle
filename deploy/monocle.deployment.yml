@@ -35,6 +35,21 @@ spec:
               configMapKeyRef:
                 name: monocle
                 key: unicorn_workers
+          - name: STATSD_HOST
+            valueFrom:
+              configMapKeyRef:
+                name: crowdtap-shared
+                key: statsd_host
+          - name: APM_HOST
+            valueFrom:
+              configMapKeyRef:
+                name: crowdtap-shared
+                key: apm_host
+          - name: APM_PORT
+            valueFrom:
+              configMapKeyRef:
+                name: crowdtap-shared
+                key: apm_port
       # the nginx container
       - name: monocle-nginx
         image: 535700620794.dkr.ecr.us-east-1.amazonaws.com/monocle-nginx:latest

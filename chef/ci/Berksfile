@@ -1,3 +1,0 @@
-source "https://supermarket.getchef.com"
-
-cookbook 'tokumx', github: 'crowdtap/chef-tokumx'

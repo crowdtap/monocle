@@ -29,7 +29,11 @@ GEM
     addressable (2.3.6)
     crack (0.4.2)
       safe_yaml (~> 1.0.0)
+    ddtrace (0.11.2)
+      msgpack
     diff-lcs (1.2.5)
+    dogapi (1.28.0)
+      multi_json
     dotenv (0.11.1)
       dotenv-deployment (~> 0.0.2)
     dotenv-deployment (0.0.2)
@@ -58,10 +62,10 @@ GEM
     json (1.8.6)
     kgio (2.9.2)
     minitest (5.4.1)
+    msgpack (1.2.2)
     multi_json (1.10.1)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
-    newrelic_rpm (3.9.3.241)
     progress (3.0.1)
     rack (1.5.2)
     rack-health (0.1.2)
@@ -106,10 +110,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  ddtrace
+  dogapi
   foreman
   image_optim
   magickly!
-  newrelic_rpm
   rack-health
   rack-protection (= 1.5.0)
   rack-test
@@ -119,4 +124,4 @@ DEPENDENCIES
   webmock
 
 BUNDLED WITH
-   1.13.6
+   1.15.1
