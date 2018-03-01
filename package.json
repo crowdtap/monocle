@@ -9,7 +9,7 @@
     "url": "git+https://github.com/crowdtap/monocle.git"
   },
   "dependencies": {
-    "k8s-scripts": "github:reactiveops/k8s-scripts#v3.7.0"
+    "rok8s-scripts": "v4.5.0"
   }
 }
 
