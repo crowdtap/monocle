@@ -7,3 +7,4 @@ metadata:
 data:
   rails_env: production
   rack_env: production
+  unicorn_workers: '4'

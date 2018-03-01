@@ -34,6 +34,11 @@ spec:
                 key: rack_env
           - name: LOG_TO_STDOUT
             value: "1"
+          - name: UNICORN_WORKERS
+            valueFrom:
+              configMapKeyRef:
+                name: monocle
+                key: unicorn_workers
       # the nginx container
       - name: monocle-nginx
         image: 535700620794.dkr.ecr.us-east-1.amazonaws.com/monocle-nginx:latest
