@@ -6,7 +6,7 @@ metadata:
     app: monocle
   name: monocle
 spec:
-  replicas: 2
+  replicas: 12
   revisionHistoryLimit: 2
   template:
     metadata:
@@ -17,6 +17,10 @@ spec:
       - name: monocle
         image: 535700620794.dkr.ecr.us-east-1.amazonaws.com/monocle:latest
         imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "2Gi"
+            cpu: "2"
         env:
           - name: RAILS_ENV
             valueFrom:
