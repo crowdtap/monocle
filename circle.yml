@@ -37,7 +37,7 @@ dependencies:
 
 deployment:
   staging:
-    branch: kubernetes
+    branch: staging
     commands:
       # nginx sidecar
       - docker tag -f "${DOCKERTAG_NGINX}:latest" "${EXTERNAL_REGISTRY_BASE_DOMAIN}/${DOCKERTAG_NGINX}:${CI_SHA1}"
@@ -48,3 +48,15 @@ deployment:
       - prepare-kubectl
       - kubectl config use-context staging
       - k8s-deploy -f deploy/staging.config
+  production:
+    branch: production
+    commands:
+      # nginx sidecar
+      - docker tag -f "${DOCKERTAG_NGINX}:latest" "${EXTERNAL_REGISTRY_BASE_DOMAIN}/${DOCKERTAG_NGINX}:${CI_SHA1}"
+      - docker push "${EXTERNAL_REGISTRY_BASE_DOMAIN}/${DOCKERTAG_NGINX}:${CI_SHA1}"
+      # the app
+      - docker-push -f deploy/production.config
+      - ensure-kubectl
+      - prepare-kubectl
+      - kubectl config use-context production
+      - k8s-deploy -f deploy/production.config
